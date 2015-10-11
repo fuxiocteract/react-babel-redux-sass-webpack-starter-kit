@@ -12,19 +12,19 @@ function handleRecords(state = initialState, action) {
     case ADD_RECORD:
 
       var copyState = state;
-      copyState.push(action.record);
+      copyState.records.push(action.record);
       return copyState;
 
     case UPDATE_RECORD:
 
       var copyState = state;
-      copyState[action.index] = action.record;
+      copyState.records[action.index] = action.record;
       return copyState;
 
     case REMOVE_RECORD:
 
       var copyState = state;
-      copyState.splice(action.index, 1);
+      copyState.records.splice(action.index, 1);
       return copyState;
 
     default:
